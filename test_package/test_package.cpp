@@ -16,10 +16,10 @@ int main()
     {
         vk::Instance instance = vk::createInstance(instanceCreateInfo);
 
-        std::vector<vk::PhysicalDevice> physicalDevices = instance.enumeratePhysicalDevices();
-        vk::PhysicalDevice physicalDevice = physicalDevices[0];
-        vk::PhysicalDeviceProperties deviceProperties = physicalDevice.getProperties();
-        vk::PhysicalDeviceMemoryProperties deviceMemoryProperties = physicalDevice.getMemoryProperties();
+        auto physicalDevices = instance.enumeratePhysicalDevices();
+        auto physicalDevice = physicalDevices[0];
+        auto deviceProperties = physicalDevice.getProperties();
+        auto deviceMemoryProperties = physicalDevice.getMemoryProperties();
 
         std::cout << "Vulkan device created" << std::endl;
         std::cout << "API Version:    " << deviceProperties.apiVersion << std::endl;
