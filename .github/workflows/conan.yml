@@ -102,6 +102,7 @@ jobs:
           CONAN_LOGIN_USERNAME: ${{ secrets.CONAN_LOGIN_USERNAME }}
           CONAN_PASSWORD: ${{ secrets.CONAN_PASSWORD }}
           CONAN_BUILD_TYPES: ${{ matrix.compiler.buildType }}
+          CONAN_SYSREQUIRES_MODE: enabled
         run: |
           export CONAN_${{ matrix.compiler.name }}_VERSIONS="${{ matrix.compiler.version }}"
           python build.py
