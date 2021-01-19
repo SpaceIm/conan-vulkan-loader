@@ -66,7 +66,7 @@ class VulkanLoaderConan(ConanFile):
             self.requires("wayland/1.18.0")
 
     def package_id(self):
-        if self.info.settings.compiler == "Visual Studio":
+        if self.settings.compiler == "Visual Studio":
             self.info.settings.compiler.runtime = str(self.info.settings.compiler.runtime).replace("MD", "MT")
 
     def build_requirements(self):
