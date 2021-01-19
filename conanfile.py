@@ -15,6 +15,7 @@ class VulkanLoaderConan(ConanFile):
     settings = "os", "arch", "compiler", "build_type"
     options = {
         "shared": [True, False],
+        "fPIC": [True, False],
         "with_wsi_xcb": [True, False],
         "with_wsi_xlib": [True, False],
         "with_wsi_wayland": [True, False],
@@ -22,6 +23,7 @@ class VulkanLoaderConan(ConanFile):
     }
     default_options = {
         "shared": True,
+        "fPIC": True,
         "with_wsi_xcb": True,
         "with_wsi_xlib": True,
         "with_wsi_wayland": True,
